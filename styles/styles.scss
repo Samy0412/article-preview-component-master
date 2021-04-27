@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+$Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+$Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+$Grayish-Blue: hsl(212, 23%, 69%);
+$Light-Grayish-Blue: hsl(210, 46%, 95%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $Light-Grayish-Blue;
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 280px;
+    width: 730px;
+    border-radius: 10px;
+    // overflow: hidden;
+    background-color: white;
+
+    .image {
+      overflow: hidden;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      width: 69%;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    article {
+      width: 100%;
+      padding: 33px 40px 33px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $Very-Dark-Grayish-Blue;
+        letter-spacing: 0.9px;
+      }
+      p {
+        color: $Grayish-Blue;
+      }
+    }
+    .article-footer {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      .article-footer__author {
+        display: flex;
+        flex-direction: row;
+        width: 175px;
+        justify-content: space-between;
+        .article-footer__avatar {
+          img {
+            border-radius: 50%;
+            width: 2.5rem;
+          }
+        }
+        .article-footer__info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          h3 {
+            font-size: 0.75rem;
+            letter-spacing: 0.7px;
+            color: $Very-Dark-Grayish-Blue;
+          }
+          h4 {
+            color: $Grayish-Blue;
+            font-weight: 400;
+          }
+        }
+      }
+      #icon {
+        background-color: $Light-Grayish-Blue;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        border: none;
+        outline: none;
+        #arrow {
+          fill: $Desaturated-Dark-Blue;
+        }
+      }
+    }
+  }
+
+  #share {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: $Very-Dark-Grayish-Blue;
+    width: 245px;
+    height: 55px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 100px;
+    right: -65px;
+    cursor: auto;
+    img {
+      cursor: pointer;
+    }
+    p {
+      color: $Grayish-Blue;
+      letter-spacing: 5px;
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 55px;
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-top: 12px solid $Very-Dark-Grayish-Blue;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    .container {
+      flex-direction: column;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90vw;
+      min-height: 515px;
+      overflow: hidden;
+
+      .image {
+        min-width: 100%;
+        height: 200px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      article {
+        height: 300px;
+        padding: 35px 35px 0px 35px;
+        h1 {
+          font-size: 1rem;
+          letter-spacing: 0.5px;
+          line-height: 1.5rem;
+        }
+        p {
+          font-size: 0.85rem;
+          line-height: 1.3rem;
+          margin-top: -15px;
+        }
+      }
+      #icon {
+        z-index: 100;
+      }
+      #share {
+        opacity: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 35% 0px 35px;
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        border-radius: 0px;
+        bottom: 0;
+        right: 0;
+        cursor: auto;
+        img {
+          cursor: pointer;
+        }
+        p {
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+}
